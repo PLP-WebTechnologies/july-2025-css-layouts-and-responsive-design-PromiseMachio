@@ -1,0 +1,82 @@
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.site-header span{
+    color: #5f71d4;
+}
+
+/* Header with Flexbox for one-dimensional layout */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+}
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+}
+.nav-bar li + li {
+  margin-left: 1rem;
+}
+.nav-bar a {
+  color: #fff;
+  text-decoration: flex;
+  transition: .5sec;
+}
+.nav-bar a:hover{
+    background: #5f71d4;
+}
+
+/* Grid for main site structure: sidebar + content */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default: single column */
+  gap: 1rem;
+  padding: 1rem;
+}
+.content .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: #ececec;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Footer styling */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+}
+
+/* Tablet view adjustments */
+@media (min-width: 600px) {
+  .main-layout {
+    grid-template-columns: 200px 1fr; /* sidebar + content side by side */
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 900px) {
+  .site-header {
+    padding: 2rem;
+  }
+  .content .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
